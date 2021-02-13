@@ -37,7 +37,10 @@ if(back.x<0){
 if(keyDown("space") && player.y > windowHeight/2+200) {
   player.velocityY = -20;
 }
-
+if(touches.length > 0 &&  player.y > windowHeight/2+200) {
+       player.velocityY = -20;
+       touches = [];
+    }
 player.velocityY=player.velocityY+0.8;
 
 player.collide(wall);
